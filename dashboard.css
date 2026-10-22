@@ -1,0 +1,221 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGE */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MAIN CONTAINER */
+.dashboard {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #a9d0f7;
+}
+
+/* TOP DATE AND TIME BAR */
+.top-bar {
+    width: 100%;
+    min-height: 67px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background-color: #edf4fd;
+    color: #111;
+
+    padding: 10px 20px;
+    gap: 20px;
+}
+
+/* DATE AND TIME TEXT */
+.date,
+.time {
+    font-size: clamp(18px, 2.8vw, 40px);
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    position: relative;
+
+    width: 100%;
+    min-height: calc(100vh - 67px);
+
+    background-image:
+        linear-gradient(
+            rgba(178, 213, 247, 0.25),
+            rgba(178, 213, 247, 0.25)
+        ),
+        url("campus.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* METC LOGO */
+.metc-logo {
+    position: absolute;
+
+    top: 25px;
+    left: 15.3%;
+
+    width: clamp(180px, 30vw, 440px);
+    height: auto;
+
+    object-fit: contain;
+    z-index: 2;
+}
+
+/* INSPIRATIONAL QUOTE */
+.quote {
+    position: absolute;
+
+    top: 2%;
+    right: 2.5%;
+
+    width: 42%;
+
+    text-align: center;
+    color: #240b91;
+
+    font-family: "Brush Script MT", cursive;
+    font-size: clamp(24px, 4vw, 55px);
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.quote p {
+    margin-bottom: 5px;
+}
+
+/* SCHOOL INFORMATION */
+.school-information {
+    position: absolute;
+
+    top: 50%;
+    left: 3%;
+
+    width: 59%;
+
+    text-align: center;
+}
+
+/* SCHOOL NAME */
+.school-information h1 {
+    color: #050505;
+
+    font-size: clamp(23px, 3.8vw, 53px);
+    font-weight: 900;
+
+    line-height: 1.45;
+    letter-spacing: -1px;
+
+    margin-bottom: 20px;
+}
+
+/* CAMPUS LOCATION */
+.location {
+    display: block;
+
+    width: 100%;
+    padding: 8px 10px;
+
+    background-color: #080525;
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(19px, 3.1vw, 43px);
+
+    white-space: nowrap;
+}
+
+/* TABLET RESPONSIVENESS */
+@media (max-width: 900px) {
+
+    .metc-logo {
+        left: 8%;
+        width: 34vw;
+    }
+
+    .school-information {
+        left: 3%;
+        width: 65%;
+        top: 48%;
+    }
+
+    .quote {
+        width: 43%;
+        right: 2%;
+    }
+
+    .school-information h1 {
+        font-size: clamp(22px, 3.5vw, 35px);
+    }
+
+    .location {
+        font-size: clamp(16px, 2.5vw, 25px);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+
+    .top-bar {
+        min-height: 55px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .date,
+    .time {
+        font-size: 13px;
+    }
+
+    .main-content {
+        min-height: calc(100vh - 55px);
+        background-position: center center;
+    }
+
+    .metc-logo {
+        top: 20px;
+        left: 5%;
+        width: 38vw;
+    }
+
+    .quote {
+        top: 4%;
+        right: 3%;
+        width: 48%;
+        font-size: clamp(19px, 5vw, 28px);
+    }
+
+    .school-information {
+        top: 48%;
+        left: 4%;
+        width: 92%;
+    }
+
+    .school-information h1 {
+        font-size: clamp(19px, 5vw, 28px);
+        line-height: 1.4;
+        letter-spacing: 0;
+    }
+
+    .location {
+        font-size: clamp(13px, 3.5vw, 20px);
+        padding: 10px 5px;
+        white-space: normal;
+    }
+}

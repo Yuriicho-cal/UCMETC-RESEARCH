@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>METC - Visitor Pass System</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Date and Time Header -->
+        <header class="top-bar">
+
+            <div class="date" id="date">
+                Date: Loading...
+            </div>
+
+            <div class="time" id="time">
+                Time: Loading...
+            </div>
+
+        </header>
+
+        <!-- Main Campus Background -->
+        <main class="main-content">
+
+            <!-- METC Logo -->
+            <img
+                src="metc-logo.png"
+                alt="University of Cebu METC Logo"
+                class="metc-logo"
+            >
+
+            <!-- Inspirational Quote -->
+            <div class="quote">
+                <p>"You Can't Spell Success</p>
+                <p>Without UC"</p>
+            </div>
+
+            <!-- School Information -->
+            <section class="school-information">
+
+                <h1>
+                    UNIVERSITY OF CEBU –
+                    <br>
+                    MARITIME EDUCATION AND
+                    <br>
+                    TRAINING CENTER
+                </h1>
+
+                <div class="location">
+                    Mambaling, Cebu City, Philippines
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+
+            const dateOptions = {
+                year: "numeric",
+                month: "long",
+                day: "numeric"
+            };
+
+            const timeOptions = {
+                hour: "numeric",
+                minute: "2-digit",
+                hour12: true
+            };
+
+            const dateString = now.toLocaleDateString(
+                "en-US",
+                dateOptions
+            );
+
+            const timeString = now.toLocaleTimeString(
+                "en-US",
+                timeOptions
+            );
+
+            document.getElementById("date").textContent =
+                "Date: " + dateString;
+
+            document.getElementById("time").textContent =
+                "Time: " + timeString;
+        }
+
+        // Display the date and time immediately.
+        updateDateTime();
+
+        // Update the clock every second.
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</body>
+</html>
